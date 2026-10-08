@@ -1,15 +1,30 @@
-#include<iostream>
-#include<queue>
- int main() {
-    int queue[5] = {101, 102, 103, 104, 105};
-    int n = 5;
+#include <iostream>
+#include <string>
 
-    printf("Passenger %d boarded the bus.\n", queue[0]);
-
-    printf("Remaining passengers:\n");
-
-    for (int i = 1; i < n; i++) {
-        printf("%d\n", queue[i]);
+class Character {
+private:
+    std::string name;
+    int health;
+    std::string mode;
+public:
+    Character(std::string charName, int charHealth, std::string charmode) {
+        name = charName;
+        health = charHealth;
+        mode = charmode;
     }
-     return 0;
+void displayDetails() {
+        std::cout << "Character Name: " << name
+                  << ", Health: " << health
+                  << ", Attack mode: " << mode
+                  << std::endl;
+    }
+};
+int main() {
+    Character character1("Pekka", 100, "ground");
+    Character character2("Electro dragon", 80, "air");
+
+    character1.displayDetails();
+    character2.displayDetails();
+
+    return 0;
 }
